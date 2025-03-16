@@ -2,4 +2,6 @@
 @import './topbar.css';
 @import './fontFamily.css';
 @import './header.css';
-@import './body.css'
+@import './sidebar.css';
+@import './posts.css';
+@import './home.css';
