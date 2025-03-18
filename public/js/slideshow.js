@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     showSlide();
-    setInterval(showSlide, 3000); // 3 saniyede bir değiştir
+    setInterval(showSlide, 2000); // 3 saniyede bir değiştir
 });
