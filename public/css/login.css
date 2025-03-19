@@ -4,7 +4,7 @@
 
 .login img{
     width: 100%;        
-    height: calc(100vh-50px);
+    height: calc(100vh - 50px);
     object-fit: cover; 
 }
 
@@ -90,13 +90,13 @@
 
 /* Animation */
 
-.login {
+.login form{
     opacity: 0;
     transform: translateX(-20px);
     transition: all 0.5s;
 }
 
-.login.active {
+.login.active form{
     opacity: 1;
     transform: translateX(0px);
 }

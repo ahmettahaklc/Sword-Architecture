@@ -47,24 +47,23 @@
         </div>    
     </div>
 
-    <div class="login target">
-        <img src="../public/images/loginPage.jpg" alt="background">
-        <form>  
-
-            <div class="formGroup">
-                <input type="text" required>
-                <span>Username *</span>
-            </div>
-
-            <div class="formGroup">
-                <input type="password" required>
-                <span>Password *</span>
-            </div>
-
-            <div class="btnGroup">
-                <a href="./login.html">Did you forget password?</a>
-                <button>Login</button>
-            </div>
+    
+    <div class="add target">
+        <form>
+        <div class="text">
+            <input type="text" placeholder="Your Title*" required>
+            <textarea placeholder="Your Content*" required></textarea>    
+        </div>
+        
+        <div class="button">
+            <button>
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <label for="file">
+                <i class="fa-solid fa-image"></i>
+            </label>
+            <input type="file" id="file" style="display: none;">
+        </div>
         </form>
     </div>
 
