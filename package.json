@@ -1,0 +1,21 @@
+{
+  "name": "web-programming",
+  "version": "1.0.0",
+  "description": "Dynamic web service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmettahaklc/Sword-Architecture.git"
+  },
+  "author": "Ahmet Taha Kılıç",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmettahaklc/Sword-Architecture/issues"
+  },
+  "homepage": "https://github.com/ahmettahaklc/Sword-Architecture#readme"
+}
