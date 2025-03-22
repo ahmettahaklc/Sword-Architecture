@@ -1,1 +1,6 @@
-console.log('Hello World')
+// First Method: CommonJS
+const express = require('express');
+
+// Second Method
+//import express from 'express'
+

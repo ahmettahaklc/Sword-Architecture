@@ -2,6 +2,7 @@
   "name": "web-programming",
   "version": "1.0.0",
   "description": "Dynamic web service",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/ahmettahaklc/Sword-Architecture/issues"
   },
-  "homepage": "https://github.com/ahmettahaklc/Sword-Architecture#readme"
+  "homepage": "https://github.com/ahmettahaklc/Sword-Architecture#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.12.2"
+  }
 }
