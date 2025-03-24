@@ -12,19 +12,23 @@ const fileUpload = require('express-fileupload')
 const dotenv = require('dotenv')
 const path = require('path')
 const dbs = require(path.join(__dirname, 'dbs.js'))
+const crypto = require('crypto')
 
 
 //DB Connect
 dbs()
 
 
-//Start Settings
+//Start Settings 
 dotenv.config()
 const app = express()
 
 
 //Variables
 const time = 1000 * 60 * 30
+const SECRET_VALUE = process.env.SECRET_VALUE || 'myBlog'
+const PORT = process.env.PORT || '5000'
+const API_URL = process.env.API_URL || 'http://127.0.0.1:5000'
 
 
 //The area where template engine is located
@@ -37,15 +41,21 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.json())
 app.use(fileUpload())
 app.use(expressSession({
-    secret:'myBlog',
+    secret:SECRET_VALUE,
     resave:false,
     saveUninitialized:true,
     cookie:{path:'/',httpOnly:true,secure:false,maxAge:time}
 }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-
-app.listen(5000, ()=>{
-    console.log(`Server is running http://127.0.0.1:5000`)
+app.get('/', (req, res)=>{
+    res.render('site/index.handlebars')
 })
+
+
+app.listen(PORT, ()=>{
+    console.log(`Server is running ${API_URL}`)
+})
+
+
 
