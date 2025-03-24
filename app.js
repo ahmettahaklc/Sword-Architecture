@@ -49,9 +49,24 @@ app.use(expressSession({
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res)=>{
-    res.render('site/index.handlebars')
+    res.render('site/index')
 })
 
+app.get('/about', (req, res)=>{
+    res.render('site/about')
+})
+
+app.get('/login', (req, res)=>{
+    res.render('site/login')
+})
+
+app.get('/addProject', (req, res)=>{
+    res.render('site/addProject')
+})
+
+app.get('/error', (req, res)=>{
+    res.render('site/error')
+})
 
 app.listen(PORT, ()=>{
     console.log(`Server is running ${API_URL}`)
