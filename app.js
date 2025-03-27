@@ -48,25 +48,21 @@ app.use(expressSession({
 }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', (req, res)=>{
-    res.render('site/index')
-})
+//* Router defining area
+const indexPage = require(path.join(__dirname, 'router', 'indexPage.js'))
+const aboutPage = require(path.join(__dirname, 'router', 'aboutPage.js'))
+const addPage = require(path.join(__dirname, 'router', 'addPage.js'))
+const loginPage = require(path.join(__dirname, 'router', 'loginPage.js'))
 
-app.get('/about', (req, res)=>{
-    res.render('site/about')
-})
-
-app.get('/login', (req, res)=>{
-    res.render('site/login')
-})
-
-app.get('/addProject', (req, res)=>{
-    res.render('site/addProject')
-})
-
-app.get('/error', (req, res)=>{
+//* Router using area
+app.use('/', indexPage)
+app.use('/about', aboutPage)
+app.use('/addProject', addPage)
+app.use('/login', loginPage)
+app.use('*', (req, res, next)=>{
     res.render('site/error')
 })
+
 
 app.listen(PORT, ()=>{
     console.log(`Server is running ${API_URL}`)
