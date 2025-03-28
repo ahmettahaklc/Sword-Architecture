@@ -1,0 +1,34 @@
+
+    <div class="login target">
+        <img src="/images/loginPage.jpg" alt="background">
+        <form id="register">  
+
+            <div class="formGroup">
+                <input name="username" type="text" required>
+                <span>Username *</span>
+            </div>
+
+            <div class="formGroup">
+                <input name="password" type="password" required>
+                <span>Password *</span>
+            </div>
+
+            <div class="btnGroup">
+                <a href="./login">Did you forget password?</a>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const register = document.getElementById('register')
+        register.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            
+            const formData = new FormData(e.target)
+            
+                fetch('/register/data/200',  {
+                    method: 'get'
+                })
+        })
+    </script>

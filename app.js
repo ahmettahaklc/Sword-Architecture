@@ -53,12 +53,14 @@ const indexPage = require(path.join(__dirname, 'router', 'indexPage.js'))
 const aboutPage = require(path.join(__dirname, 'router', 'aboutPage.js'))
 const addPage = require(path.join(__dirname, 'router', 'addPage.js'))
 const loginPage = require(path.join(__dirname, 'router', 'loginPage.js'))
+const registerPage = require(path.join(__dirname, 'router', 'registerPage.js'))
 
 //* Router using area
 app.use('/', indexPage)
 app.use('/about', aboutPage)
 app.use('/addProject', addPage)
 app.use('/login', loginPage)
+app.use('/register', registerPage)
 app.use('*', (req, res, next)=>{
     res.render('site/error')
 })
