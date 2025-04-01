@@ -27,8 +27,11 @@
             
             const formData = new FormData(e.target)
             
-                fetch('/register/data/200',  {
-                    method: 'get'
+                fetch('/register',{
+                    method: 'post',
+                    body: formData                    
+                }).then(response=>response.json()).then(res=>{
+                    console.log(res)
                 })
         })
     </script>

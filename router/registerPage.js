@@ -5,23 +5,36 @@ router.get('/', (req, res)=>{
     res.render('site/register')
 })
 
-router.get('/data', (req, res)=>{
-    console.log(req.query)       
-})
-
 router.post('/', (req, res)=>{
-    console.log(req.body)       
-})
+    try {
+        if(!req.body){
+            return res.json({
+                case: false,
+                message: 'Data could not be sent! Req.body'
+            })
+        }
 
+        const {username, password} = req.body
 
-router.get('/data/:id', (req, res)=>{
-    console.log(req.params) 
+        if(!username || !password){
+            return res.json({
+                case: false,
+                message: 'Data could not be sent! single data'
+            })
+        }
+
+        return res.json({
+            case: true,
+            message: 'Transaction is successfull'
+        })
+
+    } catch (error) {
+        console.log(error)
+        return res.json({
+            case:false,
+            message: 'Unexpected Error!'
+        })
+    }
 })
 
 module.exports = router
-
-/*
-* req.body = post 
-* req.query = {get, put, delete}
-* req.params = {get, put, delete}
-*/
