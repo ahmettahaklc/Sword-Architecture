@@ -9,6 +9,7 @@
 }
 
 .login form{
+    z-index: 10;
     position: absolute;
     width: 350px;
     left: calc((100% - 350px) / 2);
@@ -99,4 +100,26 @@
 .login.active form{
     opacity: 1;
     transform: translateX(0px);
+}
+
+.login .message{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .message p{
+    width: 50%;
+    transform: translateY(-50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
 }

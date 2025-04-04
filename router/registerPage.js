@@ -6,6 +6,9 @@ const { json } = require('stream/consumers')
 const User = require(join(__dirname, '..', 'model', 'userModel.js'))
 
 router.get('/', (req, res)=>{
+    if(res.locals.user){
+        return res.redirect('/error')
+    }
     res.render('site/register')
 })
 
@@ -56,7 +59,10 @@ router.post('/', async(req, res)=>{
             'password': password
         })
 
-        user.save().then(()=>{
+        user.save().then((data)=>{
+            let ID = data._id
+            ID = String(ID);
+            req.session.userID = ID
             return  res.json({
                 case: true,
                 message: 'Registration is successfull'

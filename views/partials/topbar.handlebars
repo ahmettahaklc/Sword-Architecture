@@ -21,13 +21,24 @@
                 <a href="/">HOME</a>
                 <a href="/about">ABOUT</a>
                 <a href="/register">PROJECTS</a>
-                <a href="/addProject">ADD PROJECT</a>
+
+                {{#if user}}
+                    <a href="/addProject">ADD PROJECT</a>
+                    <a href="/logout">LOGOUT</a>
+                {{/if}}
+
+                {{#unless user}}
                 <a href="/login">LOGIN</a>
+                {{/unless}}
             </div>
             <div class="right">
+                
+                {{#if user}}
                 <span>
                     <img src="/images/profil.png" alt="admin photo" title="handsome face">
                 </span>
+                {{/if}}
+                
                 <div class="searchEngine" id="searchEngine">
                     <input type="text" placeholder="...">
                     <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>

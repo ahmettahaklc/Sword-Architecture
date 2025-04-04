@@ -3,10 +3,11 @@ const router = express.Router()
 
 router.get('/', (req, res)=>{
     if(!res.locals.user){
-        return res.redirect('/error')
+        return res.redirect('/error') 
     }
 
-    return res.render('site/addProject')
+    req.session.destroy()
+    return res.redirect('/')
 })
 
-module.exports = router
+module.exports = router 

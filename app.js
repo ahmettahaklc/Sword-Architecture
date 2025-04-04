@@ -54,12 +54,26 @@ const aboutPage = require(path.join(__dirname, 'router', 'aboutPage.js'))
 const addPage = require(path.join(__dirname, 'router', 'addPage.js'))
 const loginPage = require(path.join(__dirname, 'router', 'loginPage.js'))
 const registerPage = require(path.join(__dirname, 'router', 'registerPage.js'))
+const logoutPage = require(path.join(__dirname, 'router', 'logoutPage.js'))
+
+
+app.use('/', (req, res, next)=>{
+    const {userID} = req.session
+    if(userID){
+        res.locals.user = true
+    }
+    else{
+        res.locals.user = false    
+    }
+    next()
+})
 
 //* Router using area
 app.use('/', indexPage)
 app.use('/about', aboutPage)
 app.use('/addProject', addPage)
 app.use('/login', loginPage)
+app.use('/logout', logoutPage)
 app.use('/register', registerPage)
 app.use('*', (req, res, next)=>{
     res.render('site/error')
