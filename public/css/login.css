@@ -107,7 +107,7 @@
     width: 100%;
     top: 0px;
     left: 0px;
-    
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,5 +121,9 @@
     align-items: center;
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     color: white;
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
 }
