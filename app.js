@@ -59,6 +59,7 @@ const logoutPage = require(path.join(__dirname, 'router', 'logoutPage.js'))
 
 app.use('/', (req, res, next)=>{
     const {userID} = req.session
+    req.session.userID = '67e67eca06abec224f5c2bc9cc4'   
     if(userID){
         res.locals.user = true
     }

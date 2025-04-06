@@ -23,10 +23,6 @@ router.post('/', async(req, res)=>{
         
         const userControl = await User.find({'username':username, 'password':password}).exec()
 
-        console.log(username, password)
-
-        console.log(userControl)
-
         if(userControl.length != 1){
             return res.json({
                 case: false,

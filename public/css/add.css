@@ -1,3 +1,19 @@
+.addMessage{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addMessage p{
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 20px;
+}
+
 .add{
     width: 100%;
     height: calc(100vh - 50px);
