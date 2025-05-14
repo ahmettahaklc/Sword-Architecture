@@ -4,6 +4,15 @@ const router = express.Router()
 const{join} = require('path')
 const Content = require(join(__dirname, '..', 'model', 'contentModel.js'))
 
+const nowTime = ()=>{
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const allName = `${day}.${month+1}.${year}`
+    return allName 
+}
+
 router.get('/', (req, res)=>{
     if(!res.locals.user){
         return res.redirect('/error')
@@ -59,7 +68,8 @@ router.post('/', (req, res)=>{
                     const db = new Content({
                         title,
                         content,
-                        'path': pathName 
+                        'path': `/images/content/${uniqueName}`,
+                        date:nowTime()
                     })
 
                     db.save().then(()=>{
