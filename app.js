@@ -55,6 +55,7 @@ const addPage = require(path.join(__dirname, 'router', 'addPage.js'))
 const loginPage = require(path.join(__dirname, 'router', 'loginPage.js'))
 const registerPage = require(path.join(__dirname, 'router', 'registerPage.js'))
 const logoutPage = require(path.join(__dirname, 'router', 'logoutPage.js'))
+const singlePage = require(path.join(__dirname, 'router', 'singlePage.js'))
 
 
 app.use('/', (req, res, next)=>{
@@ -76,6 +77,7 @@ app.use('/addProject', addPage)
 app.use('/login', loginPage)
 app.use('/logout', logoutPage)
 app.use('/register', registerPage)
+app.use('/single', singlePage)
 app.use('*', (req, res, next)=>{
     res.render('site/error')
 })

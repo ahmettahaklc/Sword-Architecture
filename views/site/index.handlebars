@@ -5,14 +5,14 @@
         <div class="wrapper">
             <div class="posts">
 {{#each allData}}
-                <div class="post target">
+                <a href="/single" class="post target">
                     <h1>{{title}}</h1>
                     <img src="{{path}}" alt="content">
                     <p>{{content}}</p>
                     <div class="authorAndDate">
                         <span>{{date}}</span>
                     </div>
-                </div>
+                </a>
 {{/each}}
             </div>
 

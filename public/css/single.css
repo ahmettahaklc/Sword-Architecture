@@ -1,0 +1,83 @@
+.single{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+.single .wrapper{
+    width: 100%;
+    max-width: 1366px;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.singleHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 10px;    
+}
+
+.singleHeader h2{
+    font-family: "Pacifico", cursive;
+    font-size: 30px;
+}
+
+.singleHeader .buttons button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+}
+
+.singleHeader .buttons button:first-child{
+    background-color: rgb(255, 199, 96);
+}
+
+.singleHeader .buttons button:last-child{
+    background-color: rgb(255, 133, 133);
+    margin-left: 20px;
+}
+
+.single img{
+    border-radius: 10px;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.single p {
+    font-family: "Arvo", serif;
+}
+
+.single p::first-letter {
+    margin-left: 20px;    
+}
+
+.singleFooter {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;     
+}
+
+.singleFooter span:first-child{
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.singleFooter span:first-child{
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
