@@ -2,25 +2,43 @@
     <div class="wrapper">
         <div class="singleHeader">
             <h2>
-                Title
+                {{singleData.title}}
             </h2>
             <div class="buttons">
                 <button>
                     <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button>
+                <button id = "deleteButton">
                     <i class="fa-regular fa-trash-can"></i>
                 </button>
             </div>
         </div> 
 
-        <img src="/images/qgkdp_WhatsApp Image 2025-03-15 at 11.35.40.jpeg" alt="">
+        <img src="{{singleData.path}}"alt="">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quisquam fuga sapiente nobis quae autem quas possimus! Tempore consectetur, aperiam id tenetur architecto libero. Enim beatae nam quas quos incidunt!</p>
-        
+        <p> {{singleData.content}} </p>
         <div class="singleFooter">
-            <span>Writer name</span>
-            <span>15.07.2025</span>
+
+            <span>{{singleData.date}}</span>
         </div>
     </div>
 </div>
+
+<script>
+    const deleteButton = document.getElementById('deleteButton')
+    deleteButton.addEventListener('click', ()=>{
+        let url = window.location.href;
+        url = url.split('single/')[1];
+
+        fetch(`/single/${url}`,{
+            method:'delete'
+        }).then(response =>response.json())
+        .then((res)=>{
+            if(res.case){
+                setTimeout(()=>{
+                  window.location.href = '/'
+                }, 10*2)
+            }
+        })
+    })
+</script>
