@@ -56,11 +56,12 @@ const loginPage = require(path.join(__dirname, 'router', 'loginPage.js'))
 const registerPage = require(path.join(__dirname, 'router', 'registerPage.js'))
 const logoutPage = require(path.join(__dirname, 'router', 'logoutPage.js'))
 const singlePage = require(path.join(__dirname, 'router', 'singlePage.js'))
+const editPage = require(path.join(__dirname, 'router', 'editPage.js'))
 
 
 app.use('/', (req, res, next)=>{
     const {userID} = req.session
-    req.session.userID = '67e67eca06abec224f5c2bc9cc4'   
+
     if(userID){
         res.locals.user = true
     }
@@ -78,6 +79,7 @@ app.use('/login', loginPage)
 app.use('/logout', logoutPage)
 app.use('/register', registerPage)
 app.use('/single', singlePage)
+app.use('/edit', editPage)
 app.use('*', (req, res, next)=>{
     res.render('site/error')
 })

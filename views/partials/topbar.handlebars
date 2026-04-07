@@ -20,7 +20,9 @@
             <div class="center">
                 <a href="/">HOME</a>
                 <a href="/about">ABOUT</a>
+                {{#if user}}
                 <a href="/register">PROJECTS</a>
+                {{/if}}
 
                 {{#if user}}
                     <a href="/addProject">ADD PROJECT</a>
