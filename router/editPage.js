@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {join} = require('path')
 const Content = require(join(__dirname,'..','model','contentModel.js'))
+const fs = require('fs')
 
 router.get('/:id', async(req,res)=>{
     try {
@@ -40,6 +41,14 @@ router.post('/', async(req,res)=>{
             })
         }
 
+        const oldData = await Content.findById(id).exec();
+        if (oldData && oldData.path) {
+            const oldPath = join(__dirname, '..', 'public', oldData.path);
+            fs.unlink(oldPath, (err) => {
+                if (err) console.log('Eski resim silinirken hata:', err);
+            });
+        }
+
         const extension = file.mimetype.split('/')[1]
         const uniqueName = `${Date.now()}-${Math.round(Math.random()*1E9)}.${extension}`
         const pathName = join(__dirname, '..', 'public', 'images', 'content', uniqueName)
@@ -56,7 +65,7 @@ router.post('/', async(req,res)=>{
                 $set:{
                     title,
                     content,
-                    path:`images/content/${uniqueName}`
+                    path:`/images/content/${uniqueName}`
                 }
             }).then(()=>{
                 return res.json({
